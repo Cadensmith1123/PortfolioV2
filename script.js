@@ -4,7 +4,7 @@ const swiper = new Swiper('.swiper', {
     slidesPerView: 1.5,             // Show part of next/prev slide
     spaceBetween: 30,               // Space between slides
     autoplay: {
-      delay: 5000,
+      delay: 3000,
       disableOnInteraction: false,
     },
     pagination: {
