@@ -761,6 +761,10 @@ nav ul {
         display: block;
         max-width: 100%;
         height: auto;
+        transition: transform 0.3s ease;
+      }
+    .main-nav .logo img:hover {
+      transform: scale(1.05);
       }
     
       #back-to-top {
