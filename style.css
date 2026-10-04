@@ -408,22 +408,6 @@ nav ul {
     background:#FFFFFF;
     padding: 2rem 1rem;
     font-family: 'DM Sans', sans-serif;
-    background-image:
-      repeating-linear-gradient(
-        0deg,
-        rgba(29, 73, 155, 0.04) 0,
-        rgba(29, 73, 155, 0.04) 1px,
-        transparent 1px,
-        transparent 28px
-      ),
-      repeating-linear-gradient(
-        90deg,
-        rgba(29, 73, 155, 0.04) 0,
-        rgba(29, 73, 155, 0.04) 1px,
-        transparent 1px,
-        transparent 28px
-      );
-    background-size: 100% 100%, 100% 100%;
 }
 
 .contact-form > * {
