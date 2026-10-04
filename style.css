@@ -152,7 +152,7 @@ nav ul {
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #1D499B;
+    background-color: #00A7E1;
     color: #ffffff;
     font-family: 'DM Sans', sans-serif;
     font-weight: 600;
@@ -176,7 +176,7 @@ nav ul {
   }
   
   .learn-more-btn:hover {
-    background-color: #00A7E1;
+    background-color: #1D499B;
     transform: translateX(-50%) scale(1.05);
   }
 
@@ -210,14 +210,14 @@ nav ul {
   .swiper-button-prev {
     width: 48px;
     height: 48px;
-    color: #1D499B; 
+    color: #00A7E1;
     font-size: 48px; 
     font-weight: 700;
   }
 
   .swiper-button-next:hover,
   .swiper-button-prev:hover {
-    color: #FFF; 
+    color: #1D499B;
   }
 
 
