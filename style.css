@@ -31,7 +31,7 @@ nav ul {
   }
 
   .logo img{
-    height: 110px;
+    height: 80px;
     width: auto;
     margin: 0;
     padding: 0;
@@ -65,7 +65,7 @@ nav ul {
 
     h2 {
     text-align: center;
-    font-size: 46px;
+    font-size: 42px;
     color: #1D499B;
     font-weight: bold;
     margin-top: 0;
@@ -106,14 +106,24 @@ nav ul {
     border-radius: 12px;
     overflow: hidden;
     position: relative;
+    aspect-ratio: 16 / 10;
   }
   
   .swiper-slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     display: block;
+    background: #edf3f8;
   }
+
+  .swiper-slide img[src*="TBBG.png"] {
+    object-fit: contain;
+    object-position: center;
+    background: #021a2d;
+  }
+
   
 /*  ---------------------- Slider Styles ------------------------ */
 
@@ -122,7 +132,7 @@ nav ul {
     height: 100%;
   }
   .slide-content img:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 
   }
   
@@ -130,8 +140,10 @@ nav ul {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover;
+    object-position: center;
     display: block;
     border-radius: 12px;
+    background: #edf3f8;
     transition: transform 0.3s ease;
   }
   
@@ -392,10 +404,31 @@ nav ul {
 /* ---------------------------------- Contact Styles -------------------------------------------------- */
 
 .contact-form {
+    position: relative;
     background:#FFFFFF;
     padding: 2rem 1rem;
     font-family: 'DM Sans', sans-serif;
-  
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        rgba(29, 73, 155, 0.04) 0,
+        rgba(29, 73, 155, 0.04) 1px,
+        transparent 1px,
+        transparent 28px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        rgba(29, 73, 155, 0.04) 0,
+        rgba(29, 73, 155, 0.04) 1px,
+        transparent 1px,
+        transparent 28px
+      );
+    background-size: 100% 100%, 100% 100%;
+}
+
+.contact-form > * {
+    position: relative;
+    z-index: 1;
 }
 
 .contact-form .social-cards {
@@ -550,20 +583,28 @@ nav ul {
   }
   
   .social-icon {
-    display: flex;
-    align-items: center;       
-    justify-content: center;  
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     width: 48px;
     height: 48px;
     background-color: #F9F4EF;
     color: #1D499B;
     border-radius: 50%;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1;
   }
   
   .social-icon i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     font-size: 1.5rem;
-    line-height: 1;           
-    
+    line-height: 1;
+    width: 100%;
+    height: 100%;
+    text-align: center;
   }
 
   .social-icon:hover {
@@ -578,9 +619,9 @@ nav ul {
   }
   
   .social-icon {
-    font-size: 1.8rem;      
-    color: #1D499B;;           
-    padding: 0.5rem;
+    font-size: 1.8rem;
+    color: #1D499B;
+    padding: 0;
     transition: color 0.3s ease, transform 0.2s ease;
   }
   
@@ -596,7 +637,10 @@ nav ul {
     bottom: 48px;
     right: 48px;
     display: none;
-    padding: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 1.2rem;
     background: #1D499B;
     color: #fff;
     border: none;
@@ -604,6 +648,11 @@ nav ul {
     cursor: pointer;
     z-index: 1000;
     transition: opacity 0.3s;
+    line-height: 1;
+    font-size: 1rem;
+    font-weight: 600;
+    vertical-align: middle;
+    transform: translateY(0.5px);
   }
   #back-to-top.show { display: block; opacity: 0.8; }
   #back-to-top:hover { opacity: 1; }
@@ -787,8 +836,50 @@ nav ul {
 
 #experience.experience {
   --experience-line: #1d499b;
+  position: relative;
   padding: 4rem clamp(1rem, 4vw, 4rem) 5rem;
   text-align: center;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(187, 204, 224, 0.96) 0%,
+      rgba(223, 233, 243, 0.96) 18%,
+      rgba(223, 233, 243, 0.92) 100%
+    );
+  overflow: hidden;
+}
+
+#experience.experience::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(20, 41, 71, 0.10), rgba(255,255,255,0.04)),
+    repeating-linear-gradient(
+      90deg,
+      rgba(29, 73, 155, 0.05) 0,
+      rgba(29, 73, 155, 0.05) 1px,
+      transparent 1px,
+      transparent 28px
+    ),
+    repeating-linear-gradient(
+      180deg,
+      rgba(29, 73, 155, 0.04) 0,
+      rgba(29, 73, 155, 0.04) 1px,
+      transparent 1px,
+      transparent 28px
+    );
+  pointer-events: none;
+}
+
+#experience.experience > * {
+  position: relative;
+  z-index: 1;
+}
+
+#experience.experience > * {
+  position: relative;
+  z-index: 1;
 }
 
 /* Section introduction */
@@ -930,7 +1021,7 @@ nav ul {
   transform: rotate(-4deg);
 
   box-shadow: 0 16px 34px rgba(31, 61, 109, 0.12);
-  transition: transform .3s ease;
+  transition: transform .3s ease, box-shadow .25s ease;
 }
 
 /* Alternate organic shape direction */
@@ -939,6 +1030,25 @@ nav ul {
   border-radius: 53% 47% 39% 61% /
                  42% 58% 44% 56%;
   transform: rotate(4deg);
+}
+
+#experience .experience-brand__shape--image,
+#experience .experience-entry--right .experience-brand__shape--image {
+  width: auto;
+  max-width: 100%;
+  min-height: 0;
+  aspect-ratio: auto;
+  display: inline-block;
+  background: none !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  transform: none !important;
+  overflow: visible;
+  padding: 0 !important;
+  margin: 0 auto;
 }
 
 /* Brand text */
@@ -979,8 +1089,13 @@ nav ul {
 
 /* Branding hover effect */
 
-#experience .experience-entry:hover .experience-brand__shape {
+#experience .experience-entry:hover .experience-brand__shape:not(.experience-brand__shape--image) {
   transform: rotate(0deg) scale(1.025);
+}
+
+#experience .experience-entry:hover .experience-brand__shape--image {
+  transform: translateY(-4px) scale(1.03) !important;
+  filter: drop-shadow(0 12px 18px rgba(31, 61, 109, 0.12));
 }
 
 /* Experience description cards */
@@ -1123,5 +1238,35 @@ nav ul {
   #experience .experience-card,
   #experience .experience-brand__shape {
     transition: none;
+  }
+}
+
+
+
+/* =====================================================
+   EXPERIENCE SECTION - ORGANIC COMPANY LOGOS
+   Only affects #experience
+   ===================================================== */
+
+/* Company logo artwork */
+
+#experience .experience-brand__logo {
+  display: block;
+  width: 94%;
+  height: auto;
+  max-height: 220px;
+  object-fit: contain;
+  background: transparent !important;
+  filter: drop-shadow(0 6px 16px rgba(31, 61, 109, 0.08));
+}
+
+/* Mobile sizing */
+
+@media (max-width: 800px) {
+  #experience .experience-brand__shape--image,
+  #experience .experience-entry--right .experience-brand__shape--image {
+    width: min(100%, 300px);
+    min-height: 0;
+    aspect-ratio: auto;
   }
 }
