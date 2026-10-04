@@ -778,3 +778,350 @@ nav ul {
   
   
   
+/* ================================================================
+   RELEVANT EXPERIENCE REDESIGN
+
+   All styling scoped to #experience.
+   Other website sections and pages remain unchanged.
+   ================================================================ */
+
+#experience.experience {
+  --experience-line: #1d499b;
+  padding: 4rem clamp(1rem, 4vw, 4rem) 5rem;
+  text-align: center;
+}
+
+/* Section introduction */
+
+#experience .experience-intro {
+  margin: -0.3rem auto 1.6rem;
+  max-width: 45rem;
+  color: #3d5472;
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  line-height: 1.55;
+}
+
+#experience .experience-btn-cont {
+  margin-bottom: 3.5rem;
+}
+
+/* Central timeline */
+
+#experience .experience-timeline {
+  position: relative;
+  max-width: 1160px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+#experience .experience-timeline::before {
+  content: "";
+  position: absolute;
+  top: 2rem;
+  bottom: 2rem;
+  left: 50%;
+  width: 3px;
+  background: linear-gradient(
+    #0071c5,
+    #1d499b 65%,
+    #d73f09
+  );
+  transform: translateX(-50%);
+}
+
+/* Experience entry layout */
+
+#experience .experience-entry {
+  --brand: #1d499b;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 54px minmax(0, 1fr);
+  align-items: center;
+  position: relative;
+  min-height: 225px;
+  gap: 0;
+}
+
+/* Company branding colors */
+
+#experience .experience-entry--intel {
+  --brand: #0071c5;
+}
+
+#experience .experience-entry--daimler {
+  --brand: #25292e;
+}
+
+#experience .experience-entry--osu {
+  --brand: #d73f09;
+}
+
+#experience .experience-entry--bluekube {
+  --brand: #2253a3;
+}
+
+#experience .experience-entry--freelance {
+  --brand: #47648b;
+}
+
+/* Alternating layout */
+
+#experience .experience-entry--left .experience-brand {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+#experience .experience-entry--left .experience-card {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+#experience .experience-entry--right .experience-brand {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+#experience .experience-entry--right .experience-card {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+/* Timeline markers */
+
+#experience .experience-entry__dot {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: center;
+  width: 16px;
+  height: 16px;
+  border: 4px solid #dde4f0;
+  border-radius: 50%;
+  background: var(--brand);
+  box-shadow: 0 0 0 2px var(--brand);
+  z-index: 2;
+}
+
+/* Company brand container */
+
+#experience .experience-brand {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+  gap: 0.45rem;
+}
+
+/* Organic branding shapes */
+
+#experience .experience-brand__shape {
+  width: min(90%, 370px);
+  aspect-ratio: 1.85;
+  min-height: 165px;
+  display: grid;
+  place-items: center;
+  background: var(--brand);
+  color: white;
+
+  border-radius: 39% 61% 54% 46% /
+                 56% 42% 58% 44%;
+
+  transform: rotate(-4deg);
+
+  box-shadow: 0 16px 34px rgba(31, 61, 109, 0.12);
+  transition: transform .3s ease;
+}
+
+/* Alternate organic shape direction */
+
+#experience .experience-entry--right .experience-brand__shape {
+  border-radius: 53% 47% 39% 61% /
+                 42% 58% 44% 56%;
+  transform: rotate(4deg);
+}
+
+/* Brand text */
+
+#experience .experience-brand__shape span {
+  display: block;
+  transform: rotate(4deg);
+  font-size: clamp(1.3rem, 2.5vw, 2.2rem);
+  font-weight: 850;
+  line-height: 1.05;
+  letter-spacing: -.045em;
+  text-align: center;
+}
+
+#experience .experience-entry--right .experience-brand__shape span {
+  transform: rotate(-4deg);
+}
+
+#experience .experience-entry--daimler .experience-brand__shape span {
+  font-size: clamp(1.05rem, 2vw, 1.75rem);
+  letter-spacing: .015em;
+}
+
+#experience .experience-entry--osu .experience-brand__shape span {
+  font-size: clamp(2.5rem, 4vw, 4rem);
+}
+
+#experience .experience-entry--freelance .experience-brand__shape span {
+  font-size: clamp(1rem, 1.8vw, 1.6rem);
+  letter-spacing: .015em;
+}
+
+#experience .experience-brand__name {
+  color: #344965;
+  font-size: .85rem;
+  font-weight: 650;
+}
+
+/* Branding hover effect */
+
+#experience .experience-entry:hover .experience-brand__shape {
+  transform: rotate(0deg) scale(1.025);
+}
+
+/* Experience description cards */
+
+#experience .experience-card {
+  min-width: 0;
+  padding: clamp(1.25rem, 2.5vw, 2rem);
+  background: #fff;
+  border: 1px solid #e4e9f1;
+  border-top: 5px solid var(--brand);
+  border-radius: 16px;
+
+  box-shadow: 0 10px 30px rgba(31, 61, 109, .09);
+
+  text-align: left;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+#experience .experience-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(31, 61, 109, .14);
+}
+
+/* Department / category labels */
+
+#experience .experience-card__eyebrow {
+  display: block;
+  color: var(--brand);
+  font-size: .81rem;
+  font-weight: 750;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin-bottom: .55rem;
+}
+
+/* Role titles */
+
+#experience .experience-card h3 {
+  margin: 0 0 .45rem;
+  font-size: clamp(1.2rem, 1.7vw, 1.6rem);
+  line-height: 1.25;
+  color: #17365f;
+}
+
+/* Employment dates */
+
+#experience .experience-card__date {
+  margin: 0 0 .95rem;
+  font-size: .91rem;
+  color: #53657b;
+  font-weight: 600;
+}
+
+/* Role descriptions */
+
+#experience .experience-card__description {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #37475c;
+}
+
+/* ================================================================
+   MOBILE RESPONSIVENESS
+   ================================================================ */
+
+@media (max-width: 800px) {
+
+  #experience.experience {
+    padding: 3rem 1rem 4rem;
+  }
+
+  #experience .experience-timeline {
+    gap: 1.6rem;
+  }
+
+  /* Move timeline line to the left */
+
+  #experience .experience-timeline::before {
+    left: 16px;
+    transform: none;
+  }
+
+  /* Single column experience layout */
+
+  #experience .experience-entry {
+    grid-template-columns: 34px minmax(0, 1fr);
+    min-height: 0;
+    row-gap: .7rem;
+  }
+
+  #experience .experience-entry__dot {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    align-self: center;
+  }
+
+  #experience .experience-entry--left .experience-brand,
+  #experience .experience-entry--right .experience-brand {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  #experience .experience-entry--left .experience-card,
+  #experience .experience-entry--right .experience-card {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  /* Smaller branding shapes */
+
+  #experience .experience-brand__shape {
+    width: min(66%, 250px);
+    min-height: 112px;
+    aspect-ratio: 2.2;
+  }
+
+  #experience .experience-brand__shape span {
+    font-size: 1.6rem;
+  }
+
+  #experience .experience-entry--osu .experience-brand__shape span {
+    font-size: 2.5rem;
+  }
+
+  #experience .experience-entry--daimler .experience-brand__shape span,
+  #experience .experience-entry--freelance .experience-brand__shape span {
+    font-size: 1.15rem;
+  }
+
+  #experience .experience-card {
+    padding: 1.3rem;
+  }
+}
+
+/* Accessibility: reduce animation if requested */
+
+@media (prefers-reduced-motion: reduce) {
+
+  #experience .experience-card,
+  #experience .experience-brand__shape {
+    transition: none;
+  }
+}
