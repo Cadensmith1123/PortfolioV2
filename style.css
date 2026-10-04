@@ -186,7 +186,7 @@ nav ul {
   }
   
   .portfolio-all-btn {
-    background-color: #1D499B; 
+    background-color: #00A7E1;
     color: #ffffff;
     font-family: 'DM Sans', sans-serif;
     font-weight: 600;
@@ -200,7 +200,7 @@ nav ul {
   }
   
   .portfolio-all-btn:hover {
-    background-color: #00A7E1;
+    background-color: #1D499B;
     transform: scale(1.05);
   }
 
@@ -983,6 +983,11 @@ nav ul {
   z-index: 2;
 }
 
+#experience .experience-entry--freelance .experience-entry__dot {
+  background: #2E1A0E;
+  box-shadow: 0 0 0 2px #2E1A0E;
+}
+
 /* Company brand container */
 
 #experience .experience-brand {
@@ -1119,6 +1124,14 @@ nav ul {
   letter-spacing: .06em;
   text-transform: uppercase;
   margin-bottom: .55rem;
+}
+
+#experience .experience-entry--freelance .experience-card {
+  border-top-color: #2E1A0E;
+}
+
+#experience .experience-entry--freelance .experience-card__eyebrow {
+  color: #2E1A0E;
 }
 
 /* Role titles */
