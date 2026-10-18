@@ -905,7 +905,7 @@ nav ul {
   left: 50%;
   width: 3px;
   background: linear-gradient(
-    #0071c5,
+    #01a2fc,
     #1d499b 65%,
     #d73f09
   );
@@ -927,7 +927,7 @@ nav ul {
 /* Company branding colors */
 
 #experience .experience-entry--intel {
-  --brand: #0071c5;
+  --brand: #01a2fc;
 }
 
 #experience .experience-entry--daimler {
@@ -943,7 +943,7 @@ nav ul {
 }
 
 #experience .experience-entry--freelance {
-  --brand: #47648b;
+  --brand: #472b18;
 }
 
 /* Alternating layout */
@@ -984,8 +984,8 @@ nav ul {
 }
 
 #experience .experience-entry--freelance .experience-entry__dot {
-  background: #2E1A0E;
-  box-shadow: 0 0 0 2px #2E1A0E;
+  background: var(--brand);
+  box-shadow: 0 0 0 2px var(--brand);
 }
 
 /* Company brand container */
@@ -1131,11 +1131,11 @@ nav ul {
 }
 
 #experience .experience-entry--freelance .experience-card {
-  border-top-color: #2E1A0E;
+  border-top-color: var(--brand);
 }
 
 #experience .experience-entry--freelance .experience-card__eyebrow {
-  color: #2E1A0E;
+  color: var(--brand);
 }
 
 /* Role titles */
