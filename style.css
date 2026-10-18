@@ -1016,7 +1016,8 @@ nav ul {
   transform: rotate(-4deg);
 
   box-shadow: 0 16px 34px rgba(31, 61, 109, 0.12);
-  transition: transform .3s ease, box-shadow .25s ease;
+  transition: transform .5s cubic-bezier(.22, 1, .36, 1),
+              box-shadow .5s cubic-bezier(.22, 1, .36, 1);
 }
 
 /* Alternate organic shape direction */
@@ -1044,6 +1045,8 @@ nav ul {
   overflow: visible;
   padding: 0 !important;
   margin: 0 auto;
+  transition: transform .5s cubic-bezier(.22, 1, .36, 1),
+              filter .5s cubic-bezier(.22, 1, .36, 1);
 }
 
 /* Brand text */
@@ -1090,7 +1093,7 @@ nav ul {
 
 #experience .experience-entry:hover .experience-brand__shape--image {
   transform: translateY(-4px) scale(1.03) !important;
-  filter: drop-shadow(0 12px 18px rgba(31, 61, 109, 0.12));
+  filter: drop-shadow(0 12px 18px rgba(31, 61, 109, 0.18));
 }
 
 /* Experience description cards */
@@ -1106,7 +1109,8 @@ nav ul {
   box-shadow: 0 10px 30px rgba(31, 61, 109, .09);
 
   text-align: left;
-  transition: transform .25s ease, box-shadow .25s ease;
+  transition: transform .5s cubic-bezier(.22, 1, .36, 1),
+              box-shadow .5s cubic-bezier(.22, 1, .36, 1);
 }
 
 #experience .experience-entry:hover .experience-card {
@@ -1256,11 +1260,12 @@ nav ul {
 #experience .experience-brand__logo {
   display: block;
   width: 82%;
+  max-width: 460px;
   height: auto;
   max-height: 220px;
   object-fit: contain;
   background: transparent !important;
-  filter: drop-shadow(0 6px 16px rgba(31, 61, 109, 0.08));
+  filter: drop-shadow(0 8px 18px rgba(31, 61, 109, 0.26));
 }
 
 /* Mobile sizing */
