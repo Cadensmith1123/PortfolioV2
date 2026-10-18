@@ -10,6 +10,11 @@ const swiper = new Swiper('.swiper', {
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
+      // Only 4 real projects; the other 4 slides are loop duplicates
+      renderBullet: function (index, className) {
+        if (index > 3) return '';
+        return '<span class="' + className + '"></span>';
+      },
     },
     navigation: {
       nextEl: '.swiper-button-next',
