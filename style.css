@@ -124,6 +124,12 @@ nav ul {
     background: #021a2d;
   }
 
+  .swiper-slide img[src*="OR-SupplyChains.png"] {
+    object-fit: contain;
+    object-position: center;
+    background: #f6f1e7;
+  }
+
   
 /*  ---------------------- Slider Styles ------------------------ */
 
