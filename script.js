@@ -20,6 +20,21 @@ const swiper = new Swiper('.swiper', {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
+    on: {
+      slideChange: function () {
+        // With 8 slides (4 real + 4 duplicates), map indexes 4-7 back onto the 4 bullets
+        const bullets = document.querySelectorAll('.swiper-pagination-bullet');
+        bullets.forEach(function (b) {
+          b.classList.remove('swiper-pagination-bullet-active');
+          b.removeAttribute('aria-current');
+        });
+        const bullet = bullets[this.realIndex % 4];
+        if (bullet) {
+          bullet.classList.add('swiper-pagination-bullet-active');
+          bullet.setAttribute('aria-current', 'true');
+        }
+      },
+    },
   });
   
 
