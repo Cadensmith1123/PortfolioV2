@@ -1109,7 +1109,7 @@ nav ul {
   transition: transform .25s ease, box-shadow .25s ease;
 }
 
-#experience .experience-card:hover {
+#experience .experience-entry:hover .experience-card {
   transform: translateY(-4px);
   box-shadow: 0 16px 36px rgba(31, 61, 109, .14);
 }
@@ -1255,7 +1255,7 @@ nav ul {
 
 #experience .experience-brand__logo {
   display: block;
-  width: 94%;
+  width: 82%;
   height: auto;
   max-height: 220px;
   object-fit: contain;
